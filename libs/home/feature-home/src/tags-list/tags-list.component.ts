@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, ChangeDetectionStrategy, output, input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, output, input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'cdt-tags-list',
