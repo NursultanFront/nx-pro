@@ -8,8 +8,12 @@ import { Component, ChangeDetectionStrategy, output, input } from '@angular/core
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [NgClass],
 })
-export class TagsListComponent {
+export class TagsListComponent implements OnInit {
   tags = input<string[]>([]);
   selectedTags = input<string>();
   setListTag = output<string>();
+
+  ngOnInit(): void {
+    console.log(this.tags());
+  }
 }
