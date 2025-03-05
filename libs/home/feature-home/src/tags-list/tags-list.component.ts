@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, ChangeDetectionStrategy, output, input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, output, input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'cdt-tags-list',
@@ -8,8 +8,12 @@ import { Component, ChangeDetectionStrategy, output, input } from '@angular/core
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [NgClass],
 })
-export class TagsListComponent {
+export class TagsListComponent implements OnInit {
   tags = input<string[]>([]);
   selectedTags = input<string>();
   setListTag = output<string>();
+
+  ngOnInit(): void {
+    console.log(this.tags());
+  }
 }
