@@ -1,3 +1,6 @@
+@let model = { listConfig: $listConfig() }; as model
+
+
 <div class="home-page">
   <div class="banner">
     <div class="container">
@@ -43,8 +46,13 @@
 
       <div class="col-md-3">
         @defer (when !!$tags().length) {
+          
           <div class="sidebar">
-            <cdt-tags-list (setListTag)="setListTag($event)" [tags]="$tags()"></cdt-tags-list>
+            <cdt-tags-list
+              (setListTag)="setListTag($event)"
+              [selectedTags]="model.listConfig.filters.tag"
+              [tags]="$tags()"
+            ></cdt-tags-list>
           </div>
         }
       </div>
